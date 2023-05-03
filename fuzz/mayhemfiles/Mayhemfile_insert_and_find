@@ -1,0 +1,7 @@
+project: path-tree
+target: insert_and_find
+duration: 90
+
+cmds:
+    - cmd: /insert_and_find
+
