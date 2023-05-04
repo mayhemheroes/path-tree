@@ -3,15 +3,16 @@ use libfuzzer_sys::fuzz_target;
 
 fuzz_target!(|data: (Vec<(String, i32)>,)| {
     let mut tree = path_tree::PathTree::new();
-    let mut id = None;
+    let mut test_data = None;
 
     for (path, num) in &data.0 {
-        id = Some(tree.insert(path, num));
+        test_data = Some((path,tree.insert(path, num)));
     }
 
-    match id {
+    match test_data {
         Some(x) => {
-            tree.url_for(x, &[]);
+            let url = tree.url_for(x.1, &[]);
+            assert!(url.is_some());
         }
         None => {}
     }
