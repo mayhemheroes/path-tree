@@ -19,3 +19,5 @@ FROM --platform=linux/amd64 rustlang/rust:nightly
 ## TODO: Change <Path in Builder Stage>
 
 COPY --from=builder /path-tree/fuzz/target/x86_64-unknown-linux-gnu/release/insert_and_find /
+
+COPY --from=builder /path-tree/fuzz/target/x86_64-unknown-linux-gnu/release/generate_url /

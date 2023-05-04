@@ -1,0 +1,7 @@
+project: path-tree
+target: generate_url
+duration: 90
+
+cmds:
+    - cmd: /generate_url
+
