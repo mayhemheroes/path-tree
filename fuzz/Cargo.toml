@@ -24,3 +24,10 @@ name = "insert_and_find"
 path = "fuzz_targets/insert_and_find.rs"
 test = false
 doc = false
+
+
+[[bin]]
+name = "generate_url"
+path = "fuzz_targets/generate_url.rs"
+test = false
+doc = false
